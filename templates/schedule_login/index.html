@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日程管理系统-登录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="hero is-light is-fullheight">
+	  <div class="hero-body">
+	  	<div class="container has-text-centered">  
+		  <div class="column is-4 is-offset-4">
+			<h1 class="title">日程管理系统</h1>
+		    <h2 class="subtitle">登录</h2>
+		      <div class="container has-text-left">
+				<div class="column is-4">
+					<div class="box">
+						<form action="" method="post">
+                            {% csrf_token %}
+                            {{ error }}
+                            {{ error_no_unps }}
+							<div class="field">
+								<label class="label">账户</label>
+								<div class="control has-icons-left">
+									<input class="input is-large" type="text" name="username" placeholder="学/工号">
+									<span class="icon is-large is-left">
+										<i class="fa fa-address-book"></i>
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<label class="label">密码</label>
+								<div class="control has-icons-left">
+									<input class="input is-large" type="password" name="password" placeholder="密码">
+									<span class="icon is-large is-left">
+										<i class="fas fa-lock"></i>
+									</span>
+								</div>
+							</div>						
+							<div class="field">
+								<label class="checkbox">
+									<input type="checkbox">
+									记住我
+								</label>
+							</div>											
+							<div>
+								<button class="button is-medium is-fullwidth is-link" type="submit">登录</button>
+							</div>
+						</form>
+					</div>
+					<div class="level">
+						<div class="level-item">
+							<p class="has-text-grey">
+								<a href="{% url 'register' %}">注册</a>
+							</p>
+						</div>
+						<div class="level-item" >
+							<p class="has-text-grey">
+								<a href="#">忘记密码</a> 
+							</p>
+						</div>
+						<div class="level-item" >
+							<p class="has-text-grey">
+								<a href="#" onclick="fun1()">遇到问题？</a>
+							</p>
+						</div>
+						
+					</div>
+			
+				
+		  		</div>
+			</div>
+			
+		  </div>
+	    </div>
+	  </div>
+  </section>
+    <script type="text/javascript">
+        function fun1() {
+            alert("不，你没有问题。")
+
+        }
+    </script>
+  </body>
+</html>

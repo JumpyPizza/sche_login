@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>日程表-注册</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	</head>
+	<body>
+		<section class="hero is-light is-fullheight">
+		  <div class="hero-body">
+			<div class="container has-text-centered">  
+			  <div class="column is-4 is-offset-4">
+				<h1 class="title">日程管理系统——注册</h1>
+				
+				  <div class="container has-text-left">
+					<div class="column is-4">
+						<div class="box">
+                             <form class="form" action="" method="post">
+                                {% csrf_token %}
+                                 <input type="hidden" name="csrfmiddlewaretoken" value="ctyWc0b6Pg8pg95Km0BCnjVoY0ypZ2iLl8OQEP7ZaACX6FmEmOkhDPWP2YnuRA0e">
+                                    <div class="field">
+                                        <label for="id_username">请输入您的学/工号</label>
+                                        <div class="control has-icons-left">
+                                            <input type="text" name="username" maxlength="150" autofocus required id="id_username" class="input is-medium" placeholder="学/工号">
+                                            <span class="icon is-medium is-left">
+                                                <i class="fa fa-address-book"></i>
+                                            </span>
+                                             <p>必填。150个字符或者更少。包含字母，数字和仅有的@/./+/-/_符号。</p>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="id_password1">请输入您的密码</label>
+                                        <div class="control has-icons-left">
+                                            <input type="password" name="password1" required id="id_password1" class="input is-medium"  placeholder="密码">
+                                            <span class="icon is-medium is-left">
+											    <i class="fas fa-lock"></i>
+										    </span>
+                                             <p>
+                                                <ul>
+                                                    <li>你的密码不能与其他个人信息太相似。</li>
+                                                    <li>你的密码必须包含至少 8 个字符。</li>
+                                                    <li>你的密码不能是大家都爱用的常见密码。</li>
+                                                    <li>你的密码不能全部为数字。</li>
+                                                </ul>
+                                             </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="id_password2">密码确认:</label>
+                                        <div class="control has-icons-left">
+                                            <input type="password" name="password2" required id="id_password2" class="input is-medium"  placeholder="确认密码">
+                                            <span class="icon is-medium is-left">
+											    <i class="fas fa-lock"></i>
+										    </span>
+                                              <p>为了校验，请输入与上面相同的密码。</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        {% if form.errors %}
+                                            <div style="color: red">{{ form.errors }}</div>
+                                        {%  endif %}
+                                    </div>
+
+                                 <button class="button is-medium is-fullwidth is-link" type="submit">注册</button>
+                             </form>
+
+						</div>
+						<div class="level-item" >
+							<p class="has-text-grey">
+								<a href="#" onclick="fun1()">遇到问题？</a>
+							</p>	
+						</div>
+                        <div class="level-item" >
+							<p class="has-text-grey">
+								<a href="{% url 'index' %}">已有账号</a>
+							</p>
+						</div>
+
+					</div>
+				  </div>
+			  </div>
+
+			</div>
+		  </div>
+		  
+  		</section>
+        <script type="text/javascript">
+            function fun1() {
+                alert("不，你没有问题")
+            }
+        </script>
+	</body>
